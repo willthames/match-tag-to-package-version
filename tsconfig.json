@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
     "allowJs": false,
     "target": "es5",
     "types": ["node", "jest"],
-    "module": "esnext",
+    "module": "amd",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "outFile": "./dist/index.js"
   },
   "include": ["./src/**/*"]
 }
