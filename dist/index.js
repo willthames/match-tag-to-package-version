@@ -601,11 +601,11 @@ var core = __nccwpck_require__(186);
     }
     var prefixedVersion = "" + prefix + version;
     if (gitRef !== prefixedVersion) {
-        throw new Error("Git tag (" + gitRef + ") does not match package.json version (" + prefixedVersion + ")");
+        throw new Error("Git tag (" + gitRef + ") does not match package.json version (" + version + ")");
     }
-    core.info("Git tag (" + gitRef + ") matches package.json version (" + prefixedVersion + ")");
+    core.info("Git tag (" + gitRef + ") matches package.json version (" + version + ")");
     core.setOutput("PACKAGE_VERSION", version);
-    core.setOutput("TAG_VERSION", gitRef.substring(refsTags.length));
+    core.setOutput("TAG_VERSION", gitRef.substring(prefix.length));
 });
 
 ;// CONCATENATED MODULE: ./src/index.ts

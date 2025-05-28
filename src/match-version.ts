@@ -20,12 +20,12 @@ export default (gitRef: string, prefix = "") => {
 
   if (gitRef !== prefixedVersion) {
     throw new Error(
-      `Git tag (${gitRef}) does not match package.json version (${prefixedVersion})`
+      `Git tag (${gitRef}) does not match package.json version (${version})`
     );
   }
 
   core.info(
-    `Git tag (${gitRef}) matches package.json version (${prefixedVersion})`
+    `Git tag (${gitRef}) matches package.json version (${version})`
   );
 
   core.setOutput("PACKAGE_VERSION", version);
