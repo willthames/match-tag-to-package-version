@@ -9,6 +9,7 @@ jest.mock("@actions/core", () => ({
 
 describe("matchVersion", () => {
   afterEach(() => {
+    jest.clearAllMocks();
     mock.restore();
   });
 
@@ -68,5 +69,9 @@ describe("matchVersion", () => {
     });
 
     matchVersion(`refs/tags/${prefix}${version}`, prefix);
+    expect(core.setOutput).toHaveBeenCalledWith("TAG_VERSION", version);
+    expect(core.setOutput).toHaveBeenCalledWith("PACKAGE_VERSION", version);
+    expect(core.setOutput).toHaveBeenCalledTimes(2);
+
   });
 });

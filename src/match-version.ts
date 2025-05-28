@@ -29,5 +29,5 @@ export default (gitRef: string, prefix = "") => {
   );
 
   core.setOutput("PACKAGE_VERSION", version);
-  core.setOutput("TAG_VERSION", gitRef.substring(refsTags.length));
+  core.setOutput("TAG_VERSION", gitRef.substring(prefix.length));
 };
